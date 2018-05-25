@@ -23,10 +23,15 @@ public class OrderSerializerFromFile implements OrderSerializer {
 	@Override
 	public List<Order> serialize() throws IOException {
 
+<<<<<<< Updated upstream
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("file/input.xml").getFile());
 		final Path path = file.toPath();
 		System.out.println(path);
+=======
+		final Path path = Paths.get("/Users/parthmody/Desktop/pizza-delivery/src/main/resources/input.txt");
+		System.out.println(path.toAbsolutePath().toString());
+>>>>>>> Stashed changes
 
 		List<Order> orderList = new ArrayList<>();
 

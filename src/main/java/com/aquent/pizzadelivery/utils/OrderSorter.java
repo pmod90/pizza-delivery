@@ -3,7 +3,9 @@ package com.aquent.pizzadelivery.utils;
 import java.util.Comparator;
 
 import com.aquent.pizzadelivery.dao.Order;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderSorter implements Comparator<Order> {
 
 	@Override
