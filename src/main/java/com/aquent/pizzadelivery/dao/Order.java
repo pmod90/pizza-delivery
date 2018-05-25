@@ -1,8 +1,10 @@
-package com.aquent.pizzadelivery;
+package com.aquent.pizzadelivery.dao;
+
+import java.util.Date;
 
 public class Order {
     private String food;
-    private String time;
+    private Date time;
 
     @Override
     public String toString() {
@@ -17,7 +19,7 @@ public class Order {
 
     }
 
-    public Order(String food, String time) {
+    public Order(String food, Date time) {
         this.food = food;
         this.time = time;
     }
@@ -30,11 +32,11 @@ public class Order {
         this.food = food;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 
