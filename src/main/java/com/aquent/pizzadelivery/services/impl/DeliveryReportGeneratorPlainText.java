@@ -16,7 +16,7 @@ public class DeliveryReportGeneratorPlainText implements DeliveryReportGenerator
 		FileWriter writer;
 		try {
 			ClassLoader classLoader = getClass().getClassLoader();
-			File file = new File(classLoader.getResource("file/test.output.xml").getFile());
+			File file = new File(classLoader.getResource("output.txt").getFile());
 			writer = new FileWriter(file);
 			for (Order str : orderList) {
 				writer.write("The order " + str.getFood() + " was placed at : " + " ");

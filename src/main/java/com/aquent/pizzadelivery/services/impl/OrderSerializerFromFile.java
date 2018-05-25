@@ -24,7 +24,7 @@ public class OrderSerializerFromFile implements OrderSerializer {
 	public List<Order> serialize() throws IOException {
 
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("file/input.xml").getFile());
+		File file = new File(classLoader.getResource("input.txt").getFile());
 		final Path path = file.toPath();
 		System.out.println(path);
 
