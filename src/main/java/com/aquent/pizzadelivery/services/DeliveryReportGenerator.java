@@ -6,5 +6,5 @@ import com.aquent.pizzadelivery.dao.Order;
 
 public interface DeliveryReportGenerator {
 
-	public void generate(List<Order> orderList);
+	public void generateReport(List<Order> orderList);
 }

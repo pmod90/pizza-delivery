@@ -32,7 +32,7 @@ public class AppController {
             serializedOrder = orderSerializer.serialize();
             Collections.sort(serializedOrder, orderSorter);
             System.out.println(serializedOrder);
-            deliveryReportGenerator.generate(serializedOrder);
+            deliveryReportGenerator.generateReport(serializedOrder);
         } catch (IOException e) {
         	
         }

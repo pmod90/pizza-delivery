@@ -7,6 +7,7 @@ import com.aquent.pizzadelivery.dao.Order;
 import com.aquent.pizzadelivery.services.OrderSerializer;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,8 +23,10 @@ public class OrderSerializerFromFile implements OrderSerializer {
 	@Override
 	public List<Order> serialize() throws IOException {
 
-		final Path path = Paths.get("/Users/harsh/pizza-delivery-main/pizza-delivery/src/main/resources/input.txt");
-		System.out.println(path.toAbsolutePath().toString());
+		ClassLoader classLoader = getClass().getClassLoader();
+		File file = new File(classLoader.getResource("file/input.xml").getFile());
+		final Path path = file.toPath();
+		System.out.println(path);
 
 		List<Order> orderList = new ArrayList<>();
 
