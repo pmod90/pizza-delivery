@@ -21,7 +21,7 @@ public class DeliveryReportGeneratorPlainText implements DeliveryReportGenerator
 		try {
 <<<<<<< Updated upstream
 			ClassLoader classLoader = getClass().getClassLoader();
-			File file = new File(classLoader.getResource("file/test.output.xml").getFile());
+			File file = new File(classLoader.getResource("output.txt").getFile());
 			writer = new FileWriter(file);
 =======
 			writer = new FileWriter(

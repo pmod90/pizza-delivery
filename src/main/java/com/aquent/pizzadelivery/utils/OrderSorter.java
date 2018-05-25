@@ -2,6 +2,8 @@ package com.aquent.pizzadelivery.utils;
 
 import java.util.Comparator;
 
+import org.springframework.stereotype.Component;
+
 import com.aquent.pizzadelivery.dao.Order;
 import org.springframework.stereotype.Component;
 
