@@ -15,8 +15,17 @@ public class DeliveryReportGeneratorPlainText implements DeliveryReportGenerator
 	public void generateReport(List<Order> orderList) {
 		FileWriter writer;
 		try {
-			ClassLoader classLoader = getClass().getClassLoader();
-			File file = new File(classLoader.getResource("output.txt").getFile());
+			File file = new File("src/main/resources/output.txt");
+
+			//Create the file
+			if (file.createNewFile()){
+			System.out.println("File is created!");
+			}else{
+			System.out.println("File already exists.");
+			}
+			
+			//ClassLoader classLoader = getClass().getClassLoader();
+			//file = new File(classLoader.getResource("output.txt").getFile());
 			writer = new FileWriter(file);
 			for (Order str : orderList) {
 				writer.write("The order " + str.getFood() + " was placed at : " + " ");
