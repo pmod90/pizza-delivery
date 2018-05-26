@@ -14,35 +14,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.io.File;
+import java.net.URISyntaxException;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PizzaDeliveryApplicationTests {
 
-//	@MockBean
-//	OrderSerializer orderSerializer;
-//
-//	@MockBean
-//	DeliveryReportGenerator deliveryReportGenerator;
-//
-//	@MockBean
-//	OrderSorter orderSorter;
-//
-//	@MockBean
-//	AppController appController;
-
 	@Autowired
 	TestRestTemplate testRestTemplate;
 
 	@Test
-	public void integration() {
+	public void testAppController() throws URISyntaxException {
 		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/", String.class);
 		assertThat(responseEntity.getStatusCode(),is(HttpStatus.OK));
-
-
-
+		assertTrue((new File(getClass().getClassLoader().getResource("output.txt").toURI())).exists());
 
 	}
 
