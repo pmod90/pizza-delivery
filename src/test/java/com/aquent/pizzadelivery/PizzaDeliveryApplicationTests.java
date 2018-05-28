@@ -30,7 +30,8 @@ public class PizzaDeliveryApplicationTests {
 
 	@Test
 	public void testAppController() throws URISyntaxException {
-		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/", String.class);
+
+		ResponseEntity<String> responseEntity = testRestTemplate.getForEntity("/?fileName=input.txt", String.class);
 		assertThat(responseEntity.getStatusCode(),is(HttpStatus.OK));
 		assertTrue((new File(getClass().getClassLoader().getResource("output.txt").toURI())).exists());
 

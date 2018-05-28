@@ -31,6 +31,7 @@ public class DeliveryReportGeneratorPlainText implements DeliveryReportGenerator
 				writer.write("The order " + str.getFood() + " was placed at : " + " ");
 				writer.write(str.getTime().toString());
 				writer.write(System.getProperty("line.separator"));
+
 			}
 			writer.close();
 		} catch (IOException e) {
