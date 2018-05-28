@@ -7,5 +7,5 @@ import com.aquent.pizzadelivery.dao.Order;
 
 public interface OrderSerializer {
 
-    public List<Order> serialize() throws IOException;
+    public List<Order> serialize(String fileName) throws IOException;
 }

@@ -21,11 +21,10 @@ import java.util.List;
 @Component
 public class OrderSerializerFromFile implements OrderSerializer {
 	@Override
-	public List<Order> serialize() throws IOException {
+	public List<Order> serialize(String fileName) throws IOException {
 
-		
 		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource("input.txt").getFile());
+		File file = new File(classLoader.getResource(fileName).getFile());
 		final Path path = file.toPath();
 		System.out.println(path);
 		List<Order> orderList = new ArrayList<>();
