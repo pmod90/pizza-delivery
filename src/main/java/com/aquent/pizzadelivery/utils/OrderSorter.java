@@ -5,6 +5,7 @@ import java.util.Comparator;
 import org.springframework.stereotype.Component;
 
 import com.aquent.pizzadelivery.dao.Order;
+import org.springframework.stereotype.Component;
 
 @Component
 public class OrderSorter implements Comparator<Order> {
