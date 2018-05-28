@@ -24,8 +24,6 @@ public class DeliveryReportGeneratorPlainText implements DeliveryReportGenerator
 			System.out.println("File already exists.");
 			}
 			
-			//ClassLoader classLoader = getClass().getClassLoader();
-			//file = new File(classLoader.getResource("output.txt").getFile());
 			writer = new FileWriter(file);
 			for (Order str : orderList) {
 				writer.write("The order " + str.getFood() + " was placed at : " + " ");
