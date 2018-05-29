@@ -9,6 +9,9 @@ import com.aquent.pizzadelivery.services.DeliveryReportGenerator;
 import com.aquent.pizzadelivery.services.OrderSerializer;
 import com.aquent.pizzadelivery.utils.OrderSorter;
 
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -26,10 +29,11 @@ public class AppController {
     OrderSorter orderSorter;
 
     @RequestMapping("/")
-    public String home() {
+    @Produces(MediaType.APPLICATION_JSON)
+    public String home(@QueryParam("fileName") String fileName) {
     	List<Order> serializedOrder;
         try {
-            serializedOrder = orderSerializer.serialize();
+            serializedOrder = orderSerializer.serialize(fileName);
             Collections.sort(serializedOrder, orderSorter);
             System.out.println(serializedOrder);
             deliveryReportGenerator.generateReport(serializedOrder);
